@@ -18,9 +18,14 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        let rootViewController = ConversationTableViewController()
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+
+        rootViewController.viewModel = MockDataGenerator.conversations
+
         // The ol' fashioned way.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = ConversationTableViewController()
+        window!.rootViewController = navigationController
         window!.makeKeyAndVisible()
 
         return true

@@ -57,6 +57,12 @@ extension ConversationTableViewController {
 
 // MARK: - UITableViewDelegate
 extension ConversationTableViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)
+        -> CGFloat {
+
+            return 60
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }

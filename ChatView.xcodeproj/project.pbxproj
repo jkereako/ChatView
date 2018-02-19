@@ -25,6 +25,7 @@
 		629135BA203B44EA0009F61F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135B9203B44EA0009F61F /* User.swift */; };
 		629135BC203B454D0009F61F /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135BB203B454D0009F61F /* Conversation.swift */; };
 		629135BE203B485D0009F61F /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135BD203B485D0009F61F /* ConversationTableViewController.swift */; };
+		629135C0203B4AFB0009F61F /* MockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629135BF203B4AFA0009F61F /* MockDataGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		629135B9203B44EA0009F61F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		629135BB203B454D0009F61F /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		629135BD203B485D0009F61F /* ConversationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewController.swift; sourceTree = "<group>"; };
+		629135BF203B4AFA0009F61F /* MockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				627D2D43203A928400E25155 /* Models */,
 				627D2D18203A81D000E25155 /* AppDelegate.swift */,
 				627D2D3C203A898B00E25155 /* Owner.swift */,
+				629135BF203B4AFA0009F61F /* MockDataGenerator.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				627D2D33203A845100E25155 /* RecipientTableViewCell.swift in Sources */,
 				627D2D19203A81D000E25155 /* AppDelegate.swift in Sources */,
 				629135BC203B454D0009F61F /* Conversation.swift in Sources */,
+				629135C0203B4AFB0009F61F /* MockDataGenerator.swift in Sources */,
 				627D2D41203A8EF600E25155 /* MessageTableViewCell.swift in Sources */,
 				627D2D37203A874900E25155 /* ChatViewController.swift in Sources */,
 				627D2D3B203A891800E25155 /* Message.swift in Sources */,
