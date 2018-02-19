@@ -20,7 +20,7 @@ extension AppDelegate: UIApplicationDelegate {
 
         // The ol' fashioned way.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = ChatViewController()
+        window!.rootViewController = ConversationTableViewController()
         window!.makeKeyAndVisible()
 
         return true

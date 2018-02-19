@@ -9,11 +9,16 @@
 import UIKit
 
 final class SenderTableViewCell: MessageTableViewCell {
-    @IBOutlet private weak var profilePic: CircularImageView!
+    @IBOutlet private weak var avatar: CircularImageView!
 
+    override var viewModel: Message! {
+        didSet {
+            message.text = viewModel.content
+        }
+    }
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        profilePic.image = nil
+        avatar.image = nil
     }
 }

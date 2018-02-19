@@ -15,7 +15,7 @@ class MessageTableViewCell: UITableViewCell {
         }
     }
 
-    @IBOutlet private weak var message: UITextView!
+    @IBOutlet weak var message: UITextView!
     @IBOutlet private weak var messageBackground: UIImageView!
 
     override func awakeFromNib() {

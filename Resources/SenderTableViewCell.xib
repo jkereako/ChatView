@@ -62,9 +62,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="avatar" destination="MzJ-oW-IRe" id="W52-jl-LWQ"/>
                 <outlet property="message" destination="N6x-Va-Y8J" id="jkd-tV-UR4"/>
                 <outlet property="messageBackground" destination="mey-Ca-j1E" id="Ewc-RH-TxA"/>
-                <outlet property="profilePic" destination="MzJ-oW-IRe" id="geZ-ow-LZ9"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="72"/>
         </tableViewCell>
