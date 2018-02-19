@@ -9,6 +9,20 @@
 import UIKit
 
 @UIApplicationMain
-final class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder {
     var window: UIWindow?
+}
+
+// MARK: - Application Delegate
+extension AppDelegate: UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions
+        launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        // The ol' fashioned way.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window!.rootViewController = ChatViewController()
+        window!.makeKeyAndVisible()
+
+        return true
+    }
 }
