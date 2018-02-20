@@ -9,11 +9,7 @@
 import UIKit
 
 final class ChatViewController: UIViewController {
-    var viewModel: [Message]? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var viewModel: [Message]?
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var textInput: UIView!

@@ -17,4 +17,11 @@ final class MockDataGenerator {
 
         return [conversation, conversation, conversation]
     }
+
+    static var messages: [Message] {
+        let sender = Message(owner: .sender, content: "Foo", isRead: true)
+        let recipient = Message(owner: .recipient, content: "Bar", isRead: true)
+
+        return [sender, sender, recipient, sender, recipient, recipient]
+    }
 }

@@ -23,14 +23,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mey-Ca-j1E">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mey-Ca-j1E" userLabel="Message background">
                         <rect key="frame" x="56" y="6" width="20" height="47.5"/>
                         <color key="backgroundColor" red="0.50588235290000005" green="0.28532762709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="U4r-AA-w1A"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6x-Va-Y8J">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6x-Va-Y8J" userLabel="Message">
                         <rect key="frame" x="61" y="6" width="10" height="47.5"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="AVi-xV-Z9A"/>
@@ -41,7 +41,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                     </textView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MzJ-oW-IRe" customClass="CircularImageView" customModule="ChatView" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MzJ-oW-IRe" userLabel="Avatar" customClass="CircularImageView" customModule="ChatView" customModuleProvider="target">
                         <rect key="frame" x="10" y="17.5" width="36" height="36"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="IPO-v0-Pwi"/>
@@ -62,9 +62,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="avatar" destination="MzJ-oW-IRe" id="W52-jl-LWQ"/>
-                <outlet property="message" destination="N6x-Va-Y8J" id="jkd-tV-UR4"/>
-                <outlet property="messageBackground" destination="mey-Ca-j1E" id="Ewc-RH-TxA"/>
+                <outlet property="avatar" destination="MzJ-oW-IRe" id="Js5-Sj-Rnj"/>
+                <outlet property="message" destination="N6x-Va-Y8J" id="ZE7-Hb-6Zx"/>
+                <outlet property="messageBackground" destination="mey-Ca-j1E" id="NRu-TU-qdC"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="72"/>
         </tableViewCell>

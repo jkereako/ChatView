@@ -16,21 +16,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipientTableViewCell" id="E5p-Q1-IZY" userLabel="Recipient" customClass="RecipientTableViewCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipientTableViewCell" id="E5p-Q1-IZY" userLabel="Recipient" customClass="RecipientTableViewCell" customModule="ChatView" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E5p-Q1-IZY" id="D5a-VA-i65">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nf9-ty-k3B">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nf9-ty-k3B" userLabel="Message background">
                         <rect key="frame" x="340" y="6" width="20" height="18"/>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="i3w-mG-VWt"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-WT-92f">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvo-WT-92f" userLabel="Message">
                         <rect key="frame" x="345" y="6" width="10" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="5TB-cb-VTj"/>
@@ -53,8 +53,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="message" destination="Rvo-WT-92f" id="7MI-qa-T0H"/>
-                <outlet property="messageBackground" destination="Nf9-ty-k3B" id="w2d-y4-jEt"/>
+                <outlet property="message" destination="Rvo-WT-92f" id="AtC-dW-zqR"/>
+                <outlet property="messageBackground" destination="Nf9-ty-k3B" id="Oud-ow-Jcy"/>
             </connections>
         </tableViewCell>
     </objects>

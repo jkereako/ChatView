@@ -65,5 +65,10 @@ extension ConversationTableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        // Navigate
+        let viewController = ChatViewController()
+        viewController.viewModel = MockDataGenerator.messages
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

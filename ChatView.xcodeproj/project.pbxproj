@@ -66,9 +66,9 @@
 		627D2D0C203A81CF00E25155 = {
 			isa = PBXGroup;
 			children = (
+				627D2D17203A81D000E25155 /* Sources */,
 				627D2D2B203A81FC00E25155 /* Resources */,
 				627D2D2A203A81F200E25155 /* SupportFiles */,
-				627D2D17203A81D000E25155 /* Sources */,
 				627D2D16203A81D000E25155 /* Products */,
 			);
 			sourceTree = "<group>";

@@ -24,7 +24,7 @@ class MessageTableViewCell: UITableViewCell {
         message.text = nil
         messageBackground.image = nil
         selectionStyle = .none
-        message.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5)
+
         messageBackground.layer.cornerRadius = 15
         messageBackground.clipsToBounds = true
     }
