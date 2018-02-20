@@ -31,6 +31,7 @@ final class ChatViewController: UIViewController {
 
         registerNibs()
         subscribeToNotifications()
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.delegate = self
         tableView.dataSource = self
     }
