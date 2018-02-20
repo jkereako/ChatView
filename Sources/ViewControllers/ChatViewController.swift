@@ -12,7 +12,8 @@ final class ChatViewController: UIViewController {
     var viewModel: [Message]?
 
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var textInput: UIView!
+    @IBOutlet private weak var contentInputContainer: UIView!
+    @IBOutlet private weak var contentInputContainerBottomLayoutConstraint: NSLayoutConstraint!
 
     private let RecipientTableViewCellReuseIdentifier = "RecipientTableViewCell"
     private let SenderTableViewCellReuseIdentifier = "SenderTableViewCell"
@@ -29,9 +30,30 @@ final class ChatViewController: UIViewController {
         super.viewDidLoad()
 
         registerNibs()
-
+        subscribeToNotifications()
         tableView.delegate = self
         tableView.dataSource = self
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        // Prevent the bottom cell from being hidden underneath the content input view.
+        tableView.contentInset = UIEdgeInsets(
+            top: 0, left: 0, bottom: contentInputContainer.frame.height, right: 0
+        )
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        unsubscribeFromNotifications()
+
+        // If `self` is no longer in the view controller stack, then the back button was tapped.
+        if navigationController?.viewControllers.index(of: self) == nil {
+            // Dismiss the keyboard if it's showing
+            view.endEditing(true)
+        }
     }
 }
 
@@ -74,11 +96,64 @@ extension ChatViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension ChatViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Dismiss the keyboard if it's showing
+        view.endEditing(true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension ChatViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+// MARK: - Notifications
+private extension ChatViewController {
+    @objc
+    func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let endFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+                assertionFailure("Expected values.")
+                return
+        }
+        contentInputContainerBottomLayoutConstraint.constant = endFrame.cgRectValue.height
+        let bottomIndexPath = IndexPath(row: (viewModel?.count ?? 1) - 1 , section: 0)
+        tableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: true)
+    }
+
+    @objc
+    func keyboardWillHide(notification: Notification) {
+        contentInputContainerBottomLayoutConstraint.constant = 0
+    }
 
 }
 
+// MARK: - Private helpers
 private extension ChatViewController {
+    func subscribeToNotifications() {
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(keyboardWillShow(notification:)),
+            name: .UIKeyboardWillShow,
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(keyboardWillHide(notification:)),
+            name: .UIKeyboardWillHide,
+            object: nil
+        )
+    }
+
+    func unsubscribeFromNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    }
+
     func registerNibs() {
         let senderNib = UINib(
             nibName: SenderTableViewCellReuseIdentifier,
