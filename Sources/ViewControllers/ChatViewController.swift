@@ -41,7 +41,10 @@ final class ChatViewController: UIViewController {
 
         // Prevent the bottom cell from being hidden underneath the content input view.
         tableView.contentInset = UIEdgeInsets(
-            top: 0, left: 0, bottom: contentInputContainer.frame.height, right: 0
+            top: contentInputContainer.frame.height + 16,
+            left: 0,
+            bottom: contentInputContainer.frame.height,
+            right: 0
         )
     }
 
@@ -122,6 +125,7 @@ private extension ChatViewController {
                 assertionFailure("Expected values.")
                 return
         }
+
         contentInputContainerBottomLayoutConstraint.constant = endFrame.cgRectValue.height
         let bottomIndexPath = IndexPath(row: (viewModel?.count ?? 1) - 1 , section: 0)
         tableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: true)
