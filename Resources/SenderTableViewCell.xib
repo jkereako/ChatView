@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -16,33 +17,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SenderTableViewCell" rowHeight="60" id="6Ua-9o-UUC" userLabel="Sender" customClass="SenderTableViewCell" customModule="ChatView" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SenderTableViewCell" rowHeight="60" id="6Ua-9o-UUC" userLabel="Sender" customClass="SenderTableViewCell" customModule="ChatView" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Ua-9o-UUC" id="z8W-o4-gFf">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mey-Ca-j1E" userLabel="Message background">
-                        <rect key="frame" x="56" y="6" width="20" height="47.5"/>
-                        <color key="backgroundColor" red="0.50588235290000005" green="0.28532762709999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sIQ-up-bgH" userLabel="Message container" customClass="RoundedRectangularView" customModule="ChatView" customModuleProvider="target">
+                        <rect key="frame" x="60" y="11" width="299" height="38"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVD-OA-FOz" userLabel="Message">
+                                <rect key="frame" x="16" y="8" width="267" height="22"/>
+                                <string key="text">Ratione sint voluptatem et sunt ea. Doloribus perferendis amet aut nulla ut. Aut rerum dignissimos dicta tempora modi soluta eligendi saepe.</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="U4r-AA-w1A"/>
+                            <constraint firstItem="GVD-OA-FOz" firstAttribute="leading" secondItem="sIQ-up-bgH" secondAttribute="leadingMargin" constant="8" id="1gg-Fv-VkD"/>
+                            <constraint firstItem="GVD-OA-FOz" firstAttribute="top" secondItem="sIQ-up-bgH" secondAttribute="topMargin" id="Atf-Qs-wyO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GVD-OA-FOz" secondAttribute="trailing" constant="8" id="TYw-Xw-E74"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="GVD-OA-FOz" secondAttribute="bottom" id="pH1-3O-UYl"/>
                         </constraints>
-                    </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6x-Va-Y8J" userLabel="Message">
-                        <rect key="frame" x="61" y="6" width="10" height="47.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="AVi-xV-Z9A"/>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="db2-Zc-oJW"/>
-                        </constraints>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
-                    </textView>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MzJ-oW-IRe" userLabel="Avatar" customClass="CircularImageView" customModule="ChatView" customModuleProvider="target">
-                        <rect key="frame" x="10" y="17.5" width="36" height="36"/>
+                        <rect key="frame" x="16" y="23.5" width="36" height="36"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="IPO-v0-Pwi"/>
                             <constraint firstAttribute="height" constant="36" id="Zva-fu-bsE"/>
@@ -50,21 +52,17 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="MzJ-oW-IRe" firstAttribute="leading" secondItem="z8W-o4-gFf" secondAttribute="leading" constant="10" id="8hr-wN-dxe"/>
-                    <constraint firstItem="mey-Ca-j1E" firstAttribute="width" secondItem="N6x-Va-Y8J" secondAttribute="width" constant="10" id="Gj0-Im-4OG"/>
-                    <constraint firstItem="N6x-Va-Y8J" firstAttribute="top" secondItem="z8W-o4-gFf" secondAttribute="top" constant="6" id="PGx-SB-Hj2"/>
-                    <constraint firstItem="mey-Ca-j1E" firstAttribute="centerY" secondItem="N6x-Va-Y8J" secondAttribute="centerY" id="Rz4-Gi-lKQ"/>
-                    <constraint firstItem="mey-Ca-j1E" firstAttribute="leading" secondItem="MzJ-oW-IRe" secondAttribute="trailing" constant="10" id="Ye5-uS-n6n"/>
-                    <constraint firstItem="mey-Ca-j1E" firstAttribute="bottom" secondItem="MzJ-oW-IRe" secondAttribute="bottom" id="aks-a8-reg"/>
-                    <constraint firstItem="mey-Ca-j1E" firstAttribute="centerX" secondItem="N6x-Va-Y8J" secondAttribute="centerX" id="oyC-BN-gIA"/>
-                    <constraint firstItem="mey-Ca-j1E" firstAttribute="height" secondItem="N6x-Va-Y8J" secondAttribute="height" id="sZ6-mn-62p"/>
-                    <constraint firstAttribute="bottom" secondItem="MzJ-oW-IRe" secondAttribute="bottom" constant="6" id="tpM-G4-tm5"/>
+                    <constraint firstItem="MzJ-oW-IRe" firstAttribute="leading" secondItem="z8W-o4-gFf" secondAttribute="leadingMargin" id="8hr-wN-dxe"/>
+                    <constraint firstItem="sIQ-up-bgH" firstAttribute="top" secondItem="z8W-o4-gFf" secondAttribute="topMargin" id="CuU-1q-iZh"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sIQ-up-bgH" secondAttribute="trailing" id="cO0-vX-YlZ"/>
+                    <constraint firstItem="sIQ-up-bgH" firstAttribute="leading" secondItem="MzJ-oW-IRe" secondAttribute="trailing" constant="8" id="omJ-iq-qHO"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="sIQ-up-bgH" secondAttribute="bottom" id="qbN-6g-nmd"/>
+                    <constraint firstAttribute="bottom" secondItem="MzJ-oW-IRe" secondAttribute="bottom" id="tpM-G4-tm5"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatar" destination="MzJ-oW-IRe" id="Js5-Sj-Rnj"/>
-                <outlet property="message" destination="N6x-Va-Y8J" id="ZE7-Hb-6Zx"/>
-                <outlet property="messageBackground" destination="mey-Ca-j1E" id="NRu-TU-qdC"/>
+                <outlet property="message" destination="GVD-OA-FOz" id="6LC-vt-SbL"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="72"/>
         </tableViewCell>
