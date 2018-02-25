@@ -39,13 +39,14 @@ final class ChatViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        // Prevent the bottom cell from being hidden underneath the content input view.
-        tableView.contentInset = UIEdgeInsets(
-            top: contentInputContainer.frame.height + 16,
-            left: 0,
-            bottom: contentInputContainer.frame.height + contentInputContainerBottomLayoutConstraint.constant,
-            right: 0
-        )
+        let top = contentInputContainer.frame.height + 16
+        let bottom = contentInputContainer.frame.height + contentInputContainerBottomLayoutConstraint.constant
+
+        tableView.contentInset.top = top
+        tableView.contentInset.bottom = bottom
+
+        tableView.scrollIndicatorInsets.top = top
+        tableView.scrollIndicatorInsets.bottom = bottom
     }
 
     override func viewWillDisappear(_ animated: Bool) {
