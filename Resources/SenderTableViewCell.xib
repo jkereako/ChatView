@@ -44,12 +44,17 @@
                             <constraint firstAttribute="bottomMargin" secondItem="GVD-OA-FOz" secondAttribute="bottom" id="pH1-3O-UYl"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MzJ-oW-IRe" userLabel="Avatar" customClass="CircularImageView" customModule="ChatView" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rose" translatesAutoresizingMaskIntoConstraints="NO" id="MzJ-oW-IRe" userLabel="Avatar" customClass="CircularImageView" customModule="ChatView" customModuleProvider="target">
                         <rect key="frame" x="16" y="13" width="36" height="36"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="36" id="IPO-v0-Pwi"/>
                             <constraint firstAttribute="height" constant="36" id="Zva-fu-bsE"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -67,4 +72,7 @@
             <point key="canvasLocation" x="34.5" y="72"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Rose" width="40" height="40"/>
+    </resources>
 </document>

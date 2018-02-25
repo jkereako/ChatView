@@ -8,7 +8,10 @@
 
 import UIKit
 
+@IBDesignable
 final class CircularImageView: UIImageView {
+    @IBInspectable var borderColor: UIColor = .black
+
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -24,6 +27,6 @@ final class CircularImageView: UIImageView {
         layer.masksToBounds = true
         layer.cornerRadius = frame.width / 2
         layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
+        layer.borderColor = borderColor.cgColor
     }
 }
