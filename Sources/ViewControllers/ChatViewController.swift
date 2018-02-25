@@ -127,6 +127,13 @@ extension ChatViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - Target-actions
+extension ChatViewController {
+    @IBAction func sendButtonAction(_: UIButton) {
+        view.endEditing(true)
+    }
+}
+
 // MARK: - Notifications
 private extension ChatViewController {
     @objc

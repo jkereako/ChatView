@@ -67,6 +67,9 @@
                                         <constraint firstAttribute="width" secondItem="Eyq-rb-VDB" secondAttribute="height" multiplier="1:1" id="kLo-8i-BOd"/>
                                     </constraints>
                                     <state key="normal" title="Send"/>
+                                    <connections>
+                                        <action selector="sendButtonAction:" destination="-1" eventType="touchUpInside" id="5DZ-3H-imk"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
