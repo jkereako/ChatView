@@ -62,6 +62,7 @@ final class ChatViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension ChatViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel == nil ? 0 : 1
@@ -103,6 +104,15 @@ extension ChatViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension ChatViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+
+        guard tableView.isDragging else { return }
+
+        cell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        UIView.animate(withDuration: 0.3) { cell.transform = CGAffineTransform.identity }
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Dismiss the keyboard if it's showing
         view.endEditing(true)
