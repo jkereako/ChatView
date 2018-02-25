@@ -43,7 +43,7 @@ final class ChatViewController: UIViewController {
         tableView.contentInset = UIEdgeInsets(
             top: contentInputContainer.frame.height + 16,
             left: 0,
-            bottom: contentInputContainer.frame.height,
+            bottom: contentInputContainer.frame.height + contentInputContainerBottomLayoutConstraint.constant,
             right: 0
         )
     }
@@ -129,6 +129,8 @@ private extension ChatViewController {
         contentInputContainerBottomLayoutConstraint.constant = endFrame.cgRectValue.height
         let bottomIndexPath = IndexPath(row: (viewModel?.count ?? 1) - 1 , section: 0)
         tableView.scrollToRow(at: bottomIndexPath, at: .bottom, animated: true)
+
+        view.setNeedsLayout()
     }
 
     @objc
