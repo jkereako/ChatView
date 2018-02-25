@@ -34,7 +34,7 @@ final class MockDataGenerator {
             Message(
                 owner: .recipient,
                 content: "You do something to me that I can't explain. Hold me closer and I feel " +
-                         "pain. Every beat of my heart, we've got something going on.",
+                         "no pain. Every beat of my heart, we've got something going on.",
                 isRead: true
             ),
             Message(
