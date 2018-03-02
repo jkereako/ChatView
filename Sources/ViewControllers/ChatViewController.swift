@@ -15,8 +15,8 @@ final class ChatViewController: UIViewController {
     @IBOutlet private weak var contentInputContainer: UIView!
     @IBOutlet private weak var contentInputContainerBottomLayoutConstraint: NSLayoutConstraint!
 
-    private let RecipientTableViewCellReuseIdentifier = "RecipientTableViewCell"
-    private let SenderTableViewCellReuseIdentifier = "SenderTableViewCell"
+    private let recipientTableViewCellReuseIdentifier = "RecipientTableViewCell"
+    private let senderTableViewCellReuseIdentifier = "SenderTableViewCell"
 
     init() {
         super.init(nibName: "ChatView", bundle: Bundle(for: ChatViewController.self))
@@ -74,31 +74,25 @@ extension ChatViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = viewModel![indexPath.row]
+        let cellReuseIdentifier: String
 
         switch message.owner {
         case .sender:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: SenderTableViewCellReuseIdentifier,
-                for: indexPath) as? SenderTableViewCell else {
-                    assertionFailure("Expected a SenderTableViewCell")
+            cellReuseIdentifier = senderTableViewCellReuseIdentifier
 
-                    return UITableViewCell()
-            }
-
-            cell.viewModel = message
-            return cell
         case .recipient:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: RecipientTableViewCellReuseIdentifier,
-                for: indexPath) as? RecipientTableViewCell else {
-                    assertionFailure("Expected a RecipientTableViewCell")
-
-                    return UITableViewCell()
-            }
-
-            cell.viewModel = message
-            return cell
+            cellReuseIdentifier = recipientTableViewCellReuseIdentifier
         }
+
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: cellReuseIdentifier, for: indexPath) as? MessageTableViewCell else {
+                assertionFailure("Expected a MessageTableViewCell")
+
+                return UITableViewCell()
+        }
+
+        cell.viewModel = message
+        return cell
     }
 }
 
@@ -155,7 +149,6 @@ private extension ChatViewController {
     func keyboardWillHide(notification: Notification) {
         contentInputContainerBottomLayoutConstraint.constant = 0
     }
-
 }
 
 // MARK: - Private helpers
@@ -181,18 +174,18 @@ private extension ChatViewController {
 
     func registerNibs() {
         let senderNib = UINib(
-            nibName: SenderTableViewCellReuseIdentifier,
+            nibName: senderTableViewCellReuseIdentifier,
             bundle: Bundle(for: SenderTableViewCell.self)
         )
 
         let recipientNib = UINib(
-            nibName: RecipientTableViewCellReuseIdentifier,
+            nibName: recipientTableViewCellReuseIdentifier,
             bundle: Bundle(for: RecipientTableViewCell.self)
         )
 
         tableView.register(
-            recipientNib, forCellReuseIdentifier: RecipientTableViewCellReuseIdentifier
+            recipientNib, forCellReuseIdentifier: recipientTableViewCellReuseIdentifier
         )
-        tableView.register(senderNib, forCellReuseIdentifier: SenderTableViewCellReuseIdentifier)
+        tableView.register(senderNib, forCellReuseIdentifier: senderTableViewCellReuseIdentifier)
     }
 }

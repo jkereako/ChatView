@@ -109,10 +109,6 @@
 			children = (
 				627D2D1F203A81D000E25155 /* Assets.xcassets */,
 				627D2D21203A81D000E25155 /* LaunchScreen.storyboard */,
-				627D2D2E203A83FA00E25155 /* SenderTableViewCell.xib */,
-				627D2D30203A843300E25155 /* RecipientTableViewCell.xib */,
-				627D2D3E203A8A1A00E25155 /* ChatView.xib */,
-				629135B5203B1CD60009F61F /* ConversationTableViewCell.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -120,6 +116,10 @@
 		627D2D42203A8F2700E25155 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				627D2D2E203A83FA00E25155 /* SenderTableViewCell.xib */,
+				627D2D30203A843300E25155 /* RecipientTableViewCell.xib */,
+				627D2D3E203A8A1A00E25155 /* ChatView.xib */,
+				629135B5203B1CD60009F61F /* ConversationTableViewCell.xib */,
 				627D2D40203A8EF600E25155 /* MessageTableViewCell.swift */,
 				627D2D2C203A82B600E25155 /* SenderTableViewCell.swift */,
 				627D2D32203A845100E25155 /* RecipientTableViewCell.swift */,

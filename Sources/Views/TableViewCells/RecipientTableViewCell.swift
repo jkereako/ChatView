@@ -8,5 +8,4 @@
 
 import UIKit
 
-final class RecipientTableViewCell: MessageTableViewCell {
-}
+final class RecipientTableViewCell: MessageTableViewCell {}
